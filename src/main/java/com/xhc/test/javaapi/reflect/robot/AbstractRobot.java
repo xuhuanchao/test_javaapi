@@ -5,7 +5,7 @@ import java.util.Map;
 public abstract class AbstractRobot implements Action {
 
 
-	protected int baseCode = 30;
+	protected String baseCode = "abstractRobot";
 	
 	public String typeName = "baseRobot";
 	

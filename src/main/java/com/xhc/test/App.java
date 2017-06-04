@@ -3,6 +3,7 @@ package com.xhc.test;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
@@ -27,12 +28,15 @@ public class App {
 	
 	private String robotPackage = "com.xhc.test.javaapi.reflect.robot.specific";
 	
-	private Map<String, String> robotIndexs = new HashMap<String, String>();
+	private Map<Integer, String> robotIndexs = new HashMap<Integer, String>();
 	
 	private Map<Integer, Field> robotFields = new HashMap<Integer, Field>();
 	
 	private Map<Integer, Method> robotMethods = new HashMap<Integer, Method>();
 	
+	private Integer choseIndex ;
+	
+	private AbstractRobot choseRobot;
 	
 	/**
 	 * 列出所有机器人名字
@@ -50,7 +54,7 @@ public class App {
 						if(!fclass.isInterface()){
 							String robotName = fclass.getSimpleName();
 							System.out.println(number + ". " + robotName);
-							robotIndexs.put(number+"", robotName);
+							robotIndexs.put(number, robotName);
 							number++;
 						}
 					}
@@ -79,39 +83,88 @@ public class App {
 			showAllRobot();
 			inputStr = scanner.nextLine();
 			
-			String robotName = robotIndexs.get(inputStr);
+			String robotName = robotIndexs.get(new Integer(inputStr));
 			System.out.println("您选择了机器人：" + robotName);
-			Class clazz = this.getClass();
+			choseIndex = new Integer(inputStr);
+			Class clazz = AbstractRobot.class;  //默认抽象机器人
 			try {
 				clazz = Class.forName(robotPackage + "." + robotName);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
+				
+			} catch (ClassNotFoundException e1) {
+				e1.printStackTrace();
 				return;
 			}
-			
-			System.out.println("请选择要测试的功能：");
-			System.out.println("1.获得属性");
-			System.out.println("2.获得方法");
-			System.out.println("3.创建一个机器人");
-			System.out.println("4.调用机器人的一个动作");
-			
-			inputStr = scanner.nextLine();
-			if(inputStr.equals("1")){
-				getFields(clazz);
-				System.out.println("获得属性列表：");
-				showFields();
-			} else if (inputStr.equals("2")){
-				getMethods(clazz);
-				System.out.println("获得方法列表：");
-				showMethods();
+			inputStr = choiseOption(clazz);
+			while(true){
+				if(inputStr.equals("1")){
+					getFields(clazz);
+					System.out.println("获得属性列表：");
+					showFields();
+				} else if (inputStr.equals("2")){
+					getMethods(clazz);
+					System.out.println("获得方法列表：");
+					showMethods();
+				} else if (inputStr.equals("3")){
+					try {
+						choseRobot = (AbstractRobot)clazz.newInstance();
+						
+						
+					} catch (InstantiationException e) {
+						e.printStackTrace();
+						return;
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+						return;
+					}
+				} else if (inputStr.equals("4")){
+					System.out.println("请输入要执行动作的编号：");
+					inputStr = scanner.nextLine();
+					Method method = robotMethods.get(new Integer(inputStr));
+					try {
+						method.invoke(choseRobot);
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+						return;
+					} catch (IllegalArgumentException e) {
+						e.printStackTrace();
+						return;
+					} catch (InvocationTargetException e) {
+						e.printStackTrace();
+						return;
+					}
+				
+				} else if(inputStr.equals("5")){
+					break;
+				}
+				inputStr = choiseOption(clazz);
 			}
-			
+			System.out.println("再见！");
 		}
 
-	
-	
-	
 	}
+	
+	
+	/**
+	 * 让用户做出 操作的选择
+	 * @return
+	 */
+	private String choiseOption (Class clazz){
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("\n#####请选择要测试的功能：");
+		System.out.println("1.获得属性");
+		System.out.println("2.获得方法");
+		System.out.println("3.创建一个机器人");
+		System.out.println("4.调用机器人的一个动作");
+		System.out.println("5.退出");
+		
+		String num = scanner.nextLine();
+		int inputNum = Integer.parseInt(num);
+		if(inputNum != 1 && inputNum != 2 && inputNum !=3 && inputNum !=4 && inputNum !=5 ){
+			System.out.println("输入不合法请重新输入");
+			num = choiseOption(clazz);
+		}
+		return num;	
+	} 
 	
 	
 	/**
@@ -145,7 +198,7 @@ public class App {
 			Field value = next.getValue();
 			System.out.println(next.getKey()+". Modifier:" + Modifier.toString(value.getModifiers()) + 
 					" , Return type:" + value.getType() + " , DeclaringClass:" + value.getDeclaringClass().getTypeName() + 
-					" , MethodName:" + value.getName());
+					" , FieldName:" + value.getName());
 		}
 	}
 	
