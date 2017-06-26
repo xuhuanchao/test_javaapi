@@ -12,12 +12,12 @@ import java.io.PrintWriter;
  * @author Administrator
  *
  */
-public class LoggerDaemon extends Thread{
+public class LoggerDaemonPiped extends Thread{
 
     PipedReader in = new PipedReader();
     PrintWriter pw;
     
-    public LoggerDaemon() throws IOException{
+    public LoggerDaemonPiped() throws IOException{
         pw = new PrintWriter(new PipedWriter(in));
         start();
     }
@@ -44,7 +44,7 @@ public class LoggerDaemon extends Thread{
     //  test
     //
     public static void main(String[] args) throws IOException{
-        LoggerDaemon ld = new LoggerDaemon();
+        LoggerDaemonPiped ld = new LoggerDaemonPiped();
         PrintWriter out = ld.getWriter();
         out.println("Application starting...");
         out.close();

@@ -1,9 +1,10 @@
 package com.xhc.test.javaapi.thread;
 
-public class Test {
+public class CommonTest {
 
     /**
      * 测试系统是否使用了时间片 调度线程
+     * 如果2个线程交替执行 ，证明操作系统使用了线程调度使用时间片
      */
     public static void testIsSysUseTimeSlice() {
         new ShowThread("Foo").start();
@@ -33,13 +34,15 @@ public class Test {
         }
     }
     
-    
+    /**
+     * 设置线程自定义默认异常处理
+     */
     public static void testDefaultExceptionHandler() {
         Thread.setDefaultUncaughtExceptionHandler(
                 new Thread.UncaughtExceptionHandler(){
                     @Override
                     public void uncaughtException(Thread t, Throwable e) {
-                        System.err.println(t + " threw exception: " + e);
+                        System.err.println(t + " 自定义异常处理：threw exception: " + e);
                     }
                 });
         new Thread( 
@@ -53,6 +56,7 @@ public class Test {
     }
     
     public static void main(String[] args) {
+//        testIsSysUseTimeSlice();
         testDefaultExceptionHandler();
     }
 }
