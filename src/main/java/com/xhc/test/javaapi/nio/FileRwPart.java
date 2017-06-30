@@ -1,18 +1,23 @@
 package com.xhc.test.javaapi.nio;
 
-import java.io.FileInputStream;
 import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
-import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.nio.file.FileSystem;
 
+
+/**
+ * nio 简单例子：
+ * 使用Path 对象构建FileChannel, 使用ByteBuffer 接收从FileChannel 读取的字节， 
+ * 使用CharsetDecoder 将byteBuffer 解码为charBuffer
+ * @author Administrator
+ *
+ */
 public class FileRwPart implements IFileRwAble {
 
     @Override

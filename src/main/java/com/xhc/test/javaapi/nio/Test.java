@@ -1,14 +1,16 @@
 package com.xhc.test.javaapi.nio;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.channels.ByteChannel;
-import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.util.Scanner;
+
+/**
+ * nio 简单例子：
+ * 使用Path 对象构建FileChannel, 使用ByteBuffer 接收从FileChannel 读取的字节， 
+ * 使用CharsetDecoder 将byteBuffer 解码为charBuffer
+ * @author Administrator
+ *
+ */
 
 public class Test {
 

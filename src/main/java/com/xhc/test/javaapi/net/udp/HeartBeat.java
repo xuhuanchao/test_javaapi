@@ -1,8 +1,6 @@
 package com.xhc.test.javaapi.net.udp;
 
 import java.applet.Applet;
-import java.awt.Color;
-import java.awt.Font;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.DatagramPacket;
@@ -10,10 +8,13 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import javax.swing.JApplet;
-import javax.swing.JLabel;
 
-public class HeartBeat extends JApplet {
+/**
+ * applet 根据参数的 host 和 port 使用UDP发起数据报请求，内容为一组byte数据
+ * @author Administrator
+ *
+ */
+public class HeartBeat extends Applet {
 
 	String myHost;
 	int myPort;
@@ -23,11 +24,11 @@ public class HeartBeat extends JApplet {
 		myPort = Integer.parseInt(getParameter("myPort"));
 		System.out.println(" Applet inited .");
 		
-		JLabel label = new JLabel("Hello Word1");
-		label.setFont(new Font("", 1, 30));
-		label.setForeground(Color.red);
-		//this.getContentPane().add(label);
-		this.add(label);
+//		JLabel label = new JLabel("Hello Word1");
+//		label.setFont(new Font("", 1, 30));
+//		label.setForeground(Color.red);
+//		//this.getContentPane().add(label);
+//		this.add(label);
 	}
 
 	private void sendMessage(String message){
