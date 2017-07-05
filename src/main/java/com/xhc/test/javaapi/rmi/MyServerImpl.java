@@ -31,7 +31,7 @@ import java.util.Date;
  * 
  * 测试时，将com.xhc.test.javaapi.rmi包复制到其他目录，并将本工程中该目录中生成的MyCalculation.class删除掉，
  * 确保这个class在server的classpath中不存在，只能从远端加载。可以将MyCalculation.class放在一个web工程中（例如test_sh）来提供server通过http获取远程对象。
- * 
+ * 运行新拷贝到目录中的client 代码
  * @author Administrator
  *
  */
@@ -52,6 +52,12 @@ public class MyServerImpl extends UnicastRemoteObject implements ServerRemote {
 
     @Override
     public Object execute(WorkRequest work) throws RemoteException {
+        try {
+            Thread.sleep(2000);
+            System.out.println("同步处理，等待2秒后执行方法，客户端调用execute方法也会阻塞");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return work.execute();
     }
 

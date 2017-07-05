@@ -28,6 +28,7 @@ public class MyClient {
             ServerRemote server = (ServerRemote)Naming.lookup("rmi://" + host + "/NiftyServer");
             System.out.println(server.getDate());
             System.out.println(server.execute(new MyCalculation(2)));
+            System.out.println("client work done.");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (RemoteException e) {
