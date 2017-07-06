@@ -10,9 +10,22 @@
 
 	<groupId>com.xhc.test</groupId>
 	<artifactId>test_javaapi</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>test_javaapi</name>
 
+    <dependencies>
+        <!-- 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency> -->
+    </dependencies>
 </project>
