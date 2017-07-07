@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 测试session的使用
+ * @author Administrator
+ *
+ */
 @WebServlet(urlPatterns={"/shoppingCart"},
 asyncSupported=true)
 public class ShoppingCart extends HttpServlet {
