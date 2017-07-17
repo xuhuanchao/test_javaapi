@@ -15,7 +15,7 @@ import java.util.Date;
 
 /**
  * 远程对象调用RMI 简单例子：
- * 此例子没有实现动态类加载
+ * 
  * 远程接口需要实现java.rmi.Remote接口，继承java.rmi.server.UnicastRemoteObject
  * 服务端需要将创建好的server对象绑定到注册表 Namming，需要预先启动 rmiregistry（cmd中运行） 提供服务.
  * 需要注意 rmiregistry运行的classpath需要包含注册的远程对象 
@@ -32,7 +32,7 @@ import java.util.Date;
  * 测试时，将com.xhc.test.javaapi.rmi包复制到其他目录，并将本工程中该目录中生成的MyCalculation.class删除掉，
  * 确保这个class在server的classpath中不存在，只能从远端加载。可以将MyCalculation.class放在一个web工程中（例如test_sh）来提供server通过http获取远程对象。
  * 运行新拷贝到目录中的client 代码
- * @author Administrator
+ * @author xhc
  *
  */
 
