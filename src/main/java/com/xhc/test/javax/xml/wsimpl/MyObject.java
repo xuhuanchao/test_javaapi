@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>myObject complex typeµÄ Java Àà¡£
+ * <p>myObject complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="myObject">
@@ -37,7 +37,7 @@ public class MyObject {
     protected String stringValue;
 
     /**
-     * »ñÈ¡intValueÊôĞÔµÄÖµ¡£
+     * è·å–intValueå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getIntValue() {
@@ -45,7 +45,7 @@ public class MyObject {
     }
 
     /**
-     * ÉèÖÃintValueÊôĞÔµÄÖµ¡£
+     * è®¾ç½®intValueå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setIntValue(int value) {
@@ -53,7 +53,7 @@ public class MyObject {
     }
 
     /**
-     * »ñÈ¡stringValueÊôĞÔµÄÖµ¡£
+     * è·å–stringValueå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class MyObject {
     }
 
     /**
-     * ÉèÖÃstringValueÊôĞÔµÄÖµ¡£
+     * è®¾ç½®stringValueå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

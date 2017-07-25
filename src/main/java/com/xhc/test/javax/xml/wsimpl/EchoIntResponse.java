@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>echoIntResponse complex typeµÄ Java Àà¡£
+ * <p>echoIntResponse complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="echoIntResponse">
@@ -36,7 +36,7 @@ public class EchoIntResponse {
     protected int _return;
 
     /**
-     * »ñÈ¡returnÊôĞÔµÄÖµ¡£
+     * è·å–returnå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getReturn() {
@@ -44,7 +44,7 @@ public class EchoIntResponse {
     }
 
     /**
-     * ÉèÖÃreturnÊôĞÔµÄÖµ¡£
+     * è®¾ç½®returnå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setReturn(int value) {

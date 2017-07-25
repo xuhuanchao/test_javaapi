@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>echoInt complex typeµÄ Java Àà¡£
+ * <p>echoInt complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="echoInt">
@@ -34,7 +34,7 @@ public class EchoInt {
     protected int arg0;
 
     /**
-     * »ñÈ¡arg0ÊôĞÔµÄÖµ¡£
+     * è·å–arg0å±æ€§çš„å€¼ã€‚
      * 
      */
     public int getArg0() {
@@ -42,7 +42,7 @@ public class EchoInt {
     }
 
     /**
-     * ÉèÖÃarg0ÊôĞÔµÄÖµ¡£
+     * è®¾ç½®arg0å±æ€§çš„å€¼ã€‚
      * 
      */
     public void setArg0(int value) {
