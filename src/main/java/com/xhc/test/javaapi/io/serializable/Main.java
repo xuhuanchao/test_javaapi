@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 
 
 /**
+ * 序列化 (Serialization)将对象的状态信息转换为可以存储或传输的形式的过程
  * java序列化 可以用来保存对象到文件，或者复制对象。
  * 序列化子类时子列的父类也要实现Serizlizable接口
  * 同一对象序列化到一个文件中多次，每次只增加5字节，java会使用应用来减少保存内容

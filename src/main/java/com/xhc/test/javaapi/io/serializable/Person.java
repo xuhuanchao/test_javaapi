@@ -2,12 +2,18 @@ package com.xhc.test.javaapi.io.serializable;
 
 import java.io.Serializable;
 
+import com.baidu.bjf.remoting.protobuf.FieldType;
+import com.baidu.bjf.remoting.protobuf.annotation.Protobuf;
+
 public class Person implements Serializable{
 
+    @Protobuf(fieldType = FieldType.STRING,order = 1)
     private String name;
     
+    @Protobuf(fieldType = FieldType.INT32,order = 2)
     private int age;
     
+    @Protobuf(fieldType = FieldType.FLOAT,order = 3)
     private float heigh;
 
     
