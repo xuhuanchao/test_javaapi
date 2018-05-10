@@ -51,8 +51,8 @@ public class CommonTest2 {
         CommonTest2 t =  new CommonTest2();
         t.test();
         t.test2();
-        
-        
+
+        System.out.println("test");
     }
 
 }
