@@ -25,7 +25,7 @@ public class Main {
     
     @FunctionalInterface
     interface MyFunctionalInterface{
-        
+
         public String changeValue(String s1, String s2);
     }
     
@@ -47,6 +47,7 @@ public class Main {
             }
         };
         System.out.println(f1.apply("2017-08-14 19:30:53"));
+        System.out.println("test");
     }
     
     
