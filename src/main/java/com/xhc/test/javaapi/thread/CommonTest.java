@@ -45,7 +45,7 @@ public class CommonTest {
                         System.err.println(t + " 自定义异常处理：threw exception: " + e);
                     }
                 });
-        new Thread( 
+        new Thread(
                 new Runnable() {
                     @Override
                     public void run() {

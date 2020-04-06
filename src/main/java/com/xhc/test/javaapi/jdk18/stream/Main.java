@@ -1,6 +1,7 @@
 package com.xhc.test.javaapi.jdk18.stream;
 
-import org.apache.log4j.PropertyConfigurator;
+
+import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,9 +13,8 @@ import java.util.stream.Collectors;
 /**
  * Created by xuhuanchao on 2018/5/10.
  */
+@Log4j2
 public class Main {
-
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void testStream(){
         List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
@@ -28,9 +28,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        String path = Main.class.getClassLoader().getResource("./").getPath();
-        System.out.println(path);
-        PropertyConfigurator.configure(path+ "config/log4j.properties");
         testStream();
     }
 }
