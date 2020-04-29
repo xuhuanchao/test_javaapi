@@ -6,11 +6,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 用来等待条件满足时才进行后续操作的情形
+ * 用来使线程等待条件满足时才进行后续操作的情形
  *
- * CountDownLatch 初始化设定计数器初始值
- * 调用await()后，线程等待计数器变为0时才可以继续执行。
- * 调用countDown()，可以使计数器-1
+ * CountDownLatch 初始化设定计数器初始值n，可理解为当计数器值变为0时表示满足条件，一共有n个条件
+ * 线程调用{@link CountDownLatch#await()}后，将阻塞等待计数器变为0时才可以继续执行。
+ * 调用{@link CountDownLatch#countDown()}，可以使计数器-1
  */
 public class CountDownLatchTest {
 
